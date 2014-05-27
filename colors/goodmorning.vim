@@ -13,7 +13,7 @@ let g:colors_name = "goodmorning"
 " Self defined syntax groups
 hi GuiInactive guifg=#595959 guibg=#c7ffd4 guisp=#c7ffd4 gui=NONE ctermfg=240 ctermbg=194 cterm=NONE
 hi GuiActive guifg=#000000 guibg=#5bcf74 guisp=#5bcf74 gui=bold ctermfg=NONE ctermbg=78 cterm=bold
-hi GuiAlternateActive guifg=#000000 guibg=#00C8FF guisp=#00C8FF gui=bold ctermfg=NONE ctermbg=78 cterm=bold
+hi GuiAlternateActive guifg=#000000 guibg=#00C8FF guisp=#00C8FF gui=bold ctermfg=NONE ctermbg=45 cterm=bold
 hi GuiHighlight guifg=#005200 guibg=#bbffa6 guisp=#bbffa6 gui=NONE ctermfg=22 ctermbg=157 cterm=NONE
 hi GuiAlternateHighlight guifg=NONE guibg=#9cebff guisp=#9cebff gui=NONE ctermfg=NONE ctermbg=117 cterm=NONE
 
