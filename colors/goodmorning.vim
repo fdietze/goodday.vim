@@ -12,8 +12,8 @@ let g:colors_name = "goodmorning"
 
 " Self defined syntax groups
 hi GuiInactive guifg=#595959 ctermfg=240 guibg=#c7ffd4 ctermbg=194 guisp=#c7ffd4 gui=NONE 
-hi GuiActive guifg=#000000 ctermfg=0 guibg=#5bcf74 ctermbg=78 guisp=#5bcf74 gui=bold 
-hi GuiAlternateActive guifg=#000000 ctermfg=0 guibg=#00C8FF ctermbg=45 guisp=#00C8FF gui=bold 
+hi GuiActive guifg=#000000 ctermfg=0 guibg=#5bcf74 ctermbg=78 guisp=#5bcf74 gui=bold cterm=bold
+hi GuiAlternateActive guifg=#000000 ctermfg=0 guibg=#00C8FF ctermbg=45 guisp=#00C8FF gui=bold cterm=bold
 hi GuiHighlight guifg=#005200 ctermfg=22 guibg=#bbffa6 ctermbg=157 guisp=#bbffa6 gui=NONE 
 hi GuiAlternateHighlight guifg=NONE guibg=#9cebff ctermbg=153 guisp=#9cebff gui=NONE 
 
@@ -43,12 +43,12 @@ hi! link PMenuSbar GuiInactive
 " Overwrite default highlighting groups
 hi Comment guifg=#8c8c8c ctermfg=245 guibg=NONE guisp=NONE gui=NONE 
 hi Constant guifg=#5100ff ctermfg=57 guibg=NONE guisp=NONE gui=NONE 
-"hi Special guifg=#ff0088 ctermfg=198 guibg=NONE guisp=NONE gui=bold 
+"cterm=bold
 hi Special guifg=#50A000 ctermfg=70 guibg=NONE guisp=NONE gui=NONE 
-hi! link Identifier Normal
-hi Statement guifg=#006fe6 ctermfg=26 guibg=NONE guisp=NONE gui=bold 
-hi PreProc guifg=#b900de ctermfg=128 guibg=NONE guisp=NONE gui=bold 
-hi Type guifg=#00A1ff ctermfg=39 guibg=NONE guisp=NONE gui=NONE 
+hi Identifier guifg=#ff0088 ctermfg=198 guibg=NONE guisp=NONE gui=bold cterm=bold
+hi Statement guifg=#006fe6 ctermfg=26 guibg=NONE guisp=NONE gui=bold cterm=bold
+hi PreProc guifg=#b900de ctermfg=128 guibg=NONE guisp=NONE gui=bold cterm=bold
+hi Type guifg=#009CF7 ctermfg=39 guibg=NONE guisp=NONE gui=bold cterm=bold 
 hi! link Underlined Normal
 hi! link Ignore Normal
 hi! link Error ErrorMsg
@@ -62,7 +62,7 @@ hi String guifg=#ff6600 ctermfg=202 guibg=NONE guisp=NONE gui=NONE
 hi! link Character String
 
 " Identifier
-hi Function guifg=#ff0088 ctermfg=198 guibg=NONE guisp=NONE gui=bold 
+"hi Function guifg=#ff0088 ctermfg=198 guibg=NONE guisp=NONE gui=bold cterm=bold
 
 " Statement
 hi! link Conditional Statement
@@ -79,13 +79,12 @@ hi! link Macro PreProc
 hi! link PreCondit PreProc
 
 " Type
-hi StorageClass guifg=#00AF2B ctermfg=34 guibg=NONE guisp=NONE gui=bold 
+hi StorageClass guifg=#00AF2B ctermfg=34 guibg=NONE guisp=NONE gui=bold cterm=bold
 hi! link Structure Type
 hi! link Typedef Type
-hi BoldType guifg=#00A1ff ctermfg=39 guibg=NONE guisp=NONE gui=bold 
 
 " Special
-hi SpecialChar guifg=#DF1B00 ctermfg=160 guibg=NONE guisp=NONE gui=bold 
+hi SpecialChar guifg=#9D0000 ctermfg=124 guibg=NONE guisp=NONE gui=bold cterm=bold
 hi! link Tag Special
 hi! link Delemiter Special
 hi! link SpecialComment Special
@@ -100,14 +99,20 @@ hi! link JavaStorageClass StorageClass
 " Scala
 hi! link ScalaKeyWord StorageClass
 hi! link ScalaKeyWordModifier StorageClass
-hi! link ScalaInstanceDeclaration BoldType
-hi! link ScalaCapitalWord BoldType
-"hi! link ScalaSquareBrackets Statement "not working...
-"hi scalaSquareBrackets guifg=#006fe6 ctermfg=26 guibg=NONE guisp=NONE gui=bold
-hi! link ScalaNameDefiniton Normal
+hi! link ScalaInstanceDeclaration Type
+hi! link ScalaCapitalWord Type
+hi! link ScalaSquareBrackets Statement
+hi! link ScalaNameDefinition Statement
 hi! link ScalaEscapedChar SpecialChar
+hi! link ScalaUnicodeChar SpecialChar
+hi! link ScalaStringEmbeddedQuote SpecialChar
 hi! link ScalaSpecial PreProc
-hi! link ScalaCaseFollowing Function
+hi! link ScalaCaseFollowing Statement
+hi! link ScalaIString String
+hi! link ScalaInterpolation Statement
+hi! link ScalaFInterpolation Statement
+hi! link ScalaTypeTypePostDeclaration Identifier
+hi! link ScalaTypeDeclaration Identifier
 
 " MarkDown
 hi! link MarkDownCode Statement
@@ -124,7 +129,7 @@ hi! link MBEVisibleActiveChanged GuiActive
 
 
 "hi SignColumn -- no settings --
-hi Title guifg=#000000 ctermfg=0 guibg=#ffffff ctermbg=15 guisp=#ffffff gui=bold 
+hi Title guifg=#000000 ctermfg=0 guibg=#ffffff ctermbg=15 guisp=#ffffff gui=bold cterm=bold
 hi Folded guifg=#20605c ctermfg=23 guibg=#b8e8dc ctermbg=152 guisp=#b8e8dc gui=NONE 
 "hi CTagsMember -- no settings --
 "hi CTagsGlobalConstant -- no settings --
