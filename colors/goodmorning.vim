@@ -11,34 +11,42 @@ set t_Co=256
 let g:colors_name = "goodmorning"
 
 " Self defined syntax groups
-hi GuiInactive guifg=#595959 ctermfg=240 guibg=#c7ffd4 ctermbg=194 guisp=#c7ffd4 gui=NONE 
-hi GuiActive guifg=#000000 ctermfg=0 guibg=#5bcf74 ctermbg=78 guisp=#5bcf74 gui=bold cterm=bold
-hi GuiAlternateActive guifg=#000000 ctermfg=0 guibg=#00C8FF ctermbg=45 guisp=#00C8FF gui=bold cterm=bold
-hi GuiHighlight guifg=#005200 ctermfg=22 guibg=#bbffa6 ctermbg=157 guisp=#bbffa6 gui=NONE 
-hi GuiAlternateHighlight guifg=NONE guibg=#9cebff ctermbg=153 guisp=#9cebff gui=NONE 
+hi GuiInactive            guifg=#595959 ctermfg=240 guibg=#c7ffd4 ctermbg=194 guisp=#c7ffd4 gui=NONE 
+hi GuiInactiveFull        guifg=#c7ffd4 ctermfg=194 guibg=#c7ffd4 ctermbg=194 guisp=#c7ffd4 gui=NONE 
+hi GuiActive              guifg=#000000 ctermfg=0 guibg=#5bcf74 ctermbg=78 guisp=#5bcf74 gui=bold cterm=bold
+hi GuiActiveFull          guifg=#5bcf74 ctermfg=78 guibg=#5bcf74 ctermbg=78 guisp=#5bcf74 gui=bold cterm=bold
+hi GuiAlternateActive     guifg=#000000 ctermfg=0 guibg=#00C8FF ctermbg=45 guisp=#00C8FF gui=bold cterm=bold
+hi GuiAlternateActiveFull guifg=#00C8FF ctermfg=45 guibg=#00C8FF ctermbg=45 guisp=#00C8FF gui=bold cterm=bold
+hi GuiHighlight           guifg=#005200 ctermfg=22 guibg=#bbffa6 ctermbg=157 guisp=#bbffa6 gui=NONE 
+hi GuiAlternateHighlight  guifg=#000000 ctermfg=0 guibg=#00C8FF ctermbg=45 guisp=#00C8FF gui=NONE cterm=NONE
 
 " General UI
 hi Normal guifg=#000000 ctermfg=0 guibg=#ffffff ctermbg=15 guisp=#ffffff gui=NONE 
 hi Cursor guifg=#ffffff ctermfg=15 guibg=#000000 ctermbg=0 guisp=NONE gui=NONE 
 hi iCursor guifg=#ffffff ctermfg=15 guibg=#5bcf74 ctermbg=78 guisp=NONE gui=NONE 
 hi CursorLine guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE 
-hi! link cursorlinenr GuiAlternateActive
+hi! link Cursorlinenr GuiAlternateActive
 hi LineNr guifg=#808080 ctermfg=244 guibg=NONE guisp=NONE gui=NONE 
-hi NonText guifg=#cfcfcf ctermfg=252 guibg=#ffffff ctermbg=15 guisp=#ffffff gui=NONE 
+hi! link SignColumn LineNr
+hi NonText guifg=#ffffff ctermfg=15 guibg=#ffffff ctermbg=15 guisp=#ffffff gui=NONE 
 hi! link StatusLineNC GuiInactive
 hi! link StatusLine GuiActive
 hi! link ModeMsg GuiAlternateActive
-hi VertSplit guifg=#c7ffd4 ctermfg=194 guibg=#c7ffd4 ctermbg=194 guisp=#c7ffd4 gui=NONE 
+hi! link VertSplit GuiInactiveFull
 hi! link WildMenu GuiAlternateActive
 hi ErrorMsg guifg=#c90000 ctermfg=1 guibg=#ffe4e4 ctermbg=224 guisp=#ffe4e4 gui=NONE 
 hi! link Search GuiHighlight
 hi! link IncSearch GuiHighlight
 hi! link MatchParen GuiHighlight
 hi! link Visual GuiAlternateHighlight
+hi SpecialKey guifg=#cfcfcf ctermfg=252 guibg=NONE guisp=NONE gui=NONE 
 hi! link Pmenu GuiInactive
 hi! link PmenuSel GuiActive
 hi! link PmenuThumb GuiAlternateActive
 hi! link PMenuSbar GuiInactive
+hi DiffAdd guifg=#00660f ctermfg=22 guibg=#d0f0d0 ctermbg=194 guisp=#d0f0d0 gui=NONE 
+hi DiffChange guifg=#af5f00 guibg=#ffffaf guisp=#ffffaf gui=NONE ctermfg=130 ctermbg=229 cterm=NONE
+hi DiffDelete guifg=#ba0028 ctermfg=124 guibg=#ffd9e9 ctermbg=224 guisp=#ffd9e9 gui=NONE 
 
 " Overwrite default highlighting groups
 hi Comment guifg=#8c8c8c ctermfg=245 guibg=NONE guisp=NONE gui=NONE 
@@ -79,7 +87,7 @@ hi! link Macro PreProc
 hi! link PreCondit PreProc
 
 " Type
-hi StorageClass guifg=#00AF2B ctermfg=34 guibg=NONE guisp=NONE gui=bold cterm=bold
+hi! StorageClass guifg=#00AF2B ctermfg=34 guibg=NONE guisp=NONE gui=bold cterm=bold
 hi! link Structure Type
 hi! link Typedef Type
 
@@ -90,15 +98,19 @@ hi! link Delemiter Special
 hi! link SpecialComment Special
 hi! link Debug Special
 
-
+"TODO: latex, html, bash, tabs
 
 
 " Java
 hi! link JavaStorageClass StorageClass
+hi! link JavaParen Statement
+hi! link JavaParen1 Type
+hi! link JavaParen2 Identifier
 
 " Scala
-hi! link ScalaKeyWord StorageClass
-hi! link ScalaKeyWordModifier StorageClass
+" StorageClass
+hi! ScalaKeyWord guifg=#00AF2B ctermfg=34 guibg=NONE guisp=NONE gui=bold cterm=bold
+hi! ScalaKeyWordModifier guifg=#00AF2B ctermfg=34 guibg=NONE guisp=NONE gui=bold cterm=bold
 hi! link ScalaInstanceDeclaration Type
 hi! link ScalaCapitalWord Type
 hi! link ScalaSquareBrackets Statement
@@ -144,22 +156,18 @@ hi DiffText guifg=#ba0028 ctermfg=124 guibg=#ffd9e9 ctermbg=224 guisp=#ffd9e9 gu
 hi! link Question Normal
 hi WarningMsg guifg=#ff0000 ctermfg=9 guibg=#ffe4e4 ctermbg=224 guisp=#ffe4e4 gui=NONE 
 "hi VisualNOS -- no settings --
-hi DiffDelete guifg=#ba0028 ctermfg=124 guibg=#ffd9e9 ctermbg=224 guisp=#ffd9e9 gui=NONE 
 "hi CursorColumn -- no settings --
 hi FoldColumn guifg=#40a098 ctermfg=72 guibg=#f0f0f0 ctermbg=7 guisp=#f0f0f0 gui=NONE 
 "hi EnumerationName -- no settings --
 hi MoreMsg guifg=#009070 ctermfg=29 guibg=NONE guisp=NONE gui=NONE 
 "hi SpellCap -- no settings --
-hi DiffChange guifg=#00660f ctermfg=22 guibg=#d0f0d0 ctermbg=194 guisp=#d0f0d0 gui=NONE 
 "hi SpellLocal -- no settings --
-hi SpecialKey guifg=#cfcfcf ctermfg=252 guibg=NONE guisp=NONE gui=NONE 
 "hi DefinedName -- no settings --
 "hi LocalVariable -- no settings --
 "hi SpellBad -- no settings --
 "hi CTagsClass -- no settings --
 hi Directory guifg=#0070b8 ctermfg=25 guibg=NONE guisp=NONE gui=NONE 
 hi Underlined guifg=#ffffff ctermfg=15 guibg=#ffffff ctermbg=15 guisp=#ffffff gui=NONE 
-hi DiffAdd guifg=#00660f ctermfg=22 guibg=#d0f0d0 ctermbg=194 guisp=#d0f0d0 gui=NONE 
 "hi TabLine -- no settings --
 "hi lcursor guifg=#f8f8f8 ctermfg=15 guibg=#8000ff ctermbg=93 guisp=#8000ff gui=NONE 
 "hi cursorim guifg=#f8f8f8 ctermfg=15 guibg=#8000ff ctermbg=93 guisp=#8000ff gui=NONE 
