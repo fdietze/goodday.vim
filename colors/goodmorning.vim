@@ -129,6 +129,7 @@ hi! link ScalaTypeDeclaration Identifier
 " MarkDown
 hi! link MarkDownCode Statement
 hi! link MarkDownCodeDelimiter Function
+hi! link MarkDownLinkText Type
 
 " MiniBufExpl
 hi! link MBENormal GuiInactive
