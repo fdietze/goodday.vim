@@ -28,7 +28,7 @@ hi CursorLine guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NON
 hi! link Cursorlinenr GuiAlternateActive
 hi LineNr guifg=#808080 ctermfg=244 guibg=NONE guisp=NONE gui=NONE 
 hi! link SignColumn LineNr
-hi NonText guifg=#ffffff ctermfg=15 guibg=#ffffff ctermbg=15 guisp=#ffffff gui=NONE 
+hi NonText guifg=#808080 ctermfg=244 guibg=NONE ctermbg=15 guisp=NONE gui=NONE 
 hi! link StatusLineNC GuiInactive
 hi! link StatusLine GuiActive
 hi! link ModeMsg GuiAlternateActive
