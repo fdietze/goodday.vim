@@ -168,7 +168,7 @@ hi MoreMsg guifg=#009070 ctermfg=29 guibg=NONE guisp=NONE gui=NONE
 "hi SpellBad -- no settings --
 "hi CTagsClass -- no settings --
 hi Directory guifg=#0070b8 ctermfg=25 guibg=NONE guisp=NONE gui=NONE 
-hi Underlined guifg=#ffffff ctermfg=15 guibg=#ffffff ctermbg=15 guisp=#ffffff gui=NONE 
+hi Underlined guifg=#000000 ctermfg=15 guibg=#ffffff ctermbg=15 guisp=#ffffff gui=NONE 
 "hi TabLine -- no settings --
 "hi lcursor guifg=#f8f8f8 ctermfg=15 guibg=#8000ff ctermbg=93 guisp=#8000ff gui=NONE 
 "hi cursorim guifg=#f8f8f8 ctermfg=15 guibg=#8000ff ctermbg=93 guisp=#8000ff gui=NONE 
