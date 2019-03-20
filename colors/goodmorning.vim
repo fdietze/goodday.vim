@@ -48,6 +48,9 @@ hi DiffAdd guifg=#00660f ctermfg=22 guibg=#d0f0d0 ctermbg=194 guisp=#d0f0d0 gui=
 hi DiffChange guifg=#af5f00 guibg=#ffffaf guisp=#ffffaf gui=NONE ctermfg=130 ctermbg=229 cterm=NONE
 hi DiffDelete guifg=#ba0028 ctermfg=124 guibg=#ffd9e9 ctermbg=224 guisp=#ffd9e9 gui=NONE 
 
+hi diffRemoved guifg=#ba0028 ctermfg=124
+hi diffAdded guifg=#50A000 ctermfg=70
+
 " Overwrite default highlighting groups
 hi Comment guifg=#8c8c8c ctermfg=245 guibg=NONE guisp=NONE gui=NONE 
 hi Constant guifg=#5100ff ctermfg=57 guibg=NONE guisp=NONE gui=NONE 
